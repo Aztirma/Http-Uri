@@ -41,8 +41,6 @@ Ahora accederemos a nuestro servidor “falso”, este recibira la solicitud de 
 
 ![Alt text](<Imagenes HTTP y URI/Untitled 5.png>)
 
-Podemos observar que al momento de acceder a nuestro servidor falso, en la ventana donde ejecutamos el ncat, 
-
 **Pregunta: La primera línea de la solicitud identifica qué URL desea recuperar el cliente. ¿Por qué no ves `http://localhost:8081` en ninguna parte de esa línea?**
 
 Por que es redundante , ya que el cliente envía una solicitud en su propia maquina(localhost) en el puerto especifico, por eso no necesita especificar la URL completa en la solicitud. El servidor ya sabe que está en "localhost" y en el puerto "8081" debido a cómo se configuró previamente, por lo que no es necesario repetirlo en la solicitud.
