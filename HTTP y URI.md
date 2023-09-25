@@ -4,23 +4,24 @@
 # **Comprendiendo Request y Response**
 
 Primero se procedio a hechar un vistazo al contenido de la pagina web señalada en la actividad, la cual trabajaremos en funcion de ella.
-![Alt text](<HTTP y URI/Untitled.png>)
+
+![Alt text](<Imagenes HTTP y URI/Untitled.png>)
 
 El objetivo de esta actividad es el uso de de las herramientas de lineas de comandos **curl** y **nc**.
 
 Es por eso que empezaremos haciendo uso del comando curl en nuestro terminal.
 
-![Alt text](<HTTP y URI/Untitled 1.png>)
+![Alt text](<Imagenes HTTP y URI/Untitled 1.png>)
 
 Como se puede observar el uso de este comando mismo nos permito obtener datos del servidor web, esta información es la respuesta HTML que recibe del servidor web.
 
 Siguiendo con la actividad, el siguiente paso será guardar el contenido obtenido en un archivo llamado *pagina_random_words.html* como se observa a continuación:
 
-![Alt text](<HTTP y URI/Untitled 2.png>)
+![Alt text](<Imagenes HTTP y URI/Untitled 2.png>)
 
 Una vez guardado nuestro archivo en nuestro ordenador, abriremos el archivo para obtener una vista previa 
 
-![Alt text](<HTTP y URI/Untitled 3.png>)
+![Alt text](<Imagenes HTTP y URI/Untitled 3.png>)
 
 **Pregunta: ¿Cuáles son las dos diferencias principales que has visto anteriormente y lo que ves en un navegador web 'normal'? ¿Qué explica estas diferencias?**
 
@@ -30,7 +31,7 @@ Además que al solo guardar una respuesta del servidor tan solo muestra una pala
 
 Siguiendo con la actividad, ahora se procedera a hacernos pasar por un servidor Web escuchando el puerto 8081: `nc -l 8081`.
 
-![Alt text](<HTTP y URI/Untitled 4.png>)
+![Alt text](<Imagenes HTTP y URI/Untitled 4.png>)
 
 **Pregunta: Suponiendo que estás ejecutando curl desde otro shell ¿qué URL tendrás que pasarle a curl para intentar acceder a tu servidor falso y por qué?**
 
@@ -38,7 +39,7 @@ Para acceder a nuestro servidor falso tendremos que usar la siguiente URL: http:
 
 Ahora accederemos a nuestro servidor “falso”, este recibira la solicitud de cliente HTTP.
 
-![Alt text](<HTTP y URI/Untitled 5.png>)
+![Alt text](<Imagenes HTTP y URI/Untitled 5.png>)
 
 Podemos observar que al momento de acceder a nuestro servidor falso, en la ventana donde ejecutamos el ncat, 
 
@@ -48,7 +49,7 @@ Por que es redundante , ya que el cliente envía una solicitud en su propia maqu
 
 Prueba `curl --help` para ver la ayuda y verificar que la línea de comando `curl -i 'http://randomword.saasbook.info'` mostrará ambos (BOTH) encabezados de respuesta del servidor y(AND) luego el cuerpo de la respuesta.
 
-![Alt text](<HTTP y URI/Untitled 6.png>)
+![Alt text](<Imagenes HTTP y URI/Untitled 6.png>)
 
 **Pregunta: Según los encabezados del servidor, ¿cuál es el código de respuesta HTTP del servidor que indica el estado de la solicitud del cliente y qué versión del protocolo HTTP utilizó el servidor para responder al cliente?**
 
@@ -59,7 +60,7 @@ Según el encabezado el código de respuesta que indica el estado de solicitud d
 
 **Pregunta: Cualquier solicitud web determinada puede devolver una página HTML, una imagen u otros tipos de entidades. ¿Hay algo en los encabezados que crea que le dice al cliente cómo interpretar el resultado?.**
 
-![Alt text](<HTTP y URI/Untitled 7.png>)
+![Alt text](<Imagenes HTTP y URI/Untitled 7.png>)
 
 Si hay algo en los encabezados que contiene información que el cliente necesita para interpretar el contenido. Por ejemplo, en el caso de encabezado "Content-Type" especifica el tipo de entidad devuelta, como HTML, imágenes o archivos de texto. Esta información permite al cliente, como un navegador web, procesar y mostrar adecuadamente el contenido. 
 
@@ -67,7 +68,7 @@ Si hay algo en los encabezados que contiene información que el cliente necesita
 
 **Pregunta: ¿Cuál sería el código de respuesta del servidor si intentaras buscar una URL inexistente en el sitio generador de palabras aleatorias? Prueba esto utilizando el procedimiento anterior.**
 
-![Alt text](<HTTP y URI/Untitled 8.png>)
+![Alt text](<Imagenes HTTP y URI/Untitled 8.png>)
 
 Como se puede observar en la imagen, si escribimos una URL inválida con nuestro comando curl nos da como respuesta "HTTP/1.1 404 Not Found”, lo que indica que no encontró la pagina en el servidor. El código de estado "404" significa "No encontrado," lo que puede significar que la URL específica no existe en el servidor lo cual es correcto pues buscamos una URL inexistente.
 
@@ -92,7 +93,7 @@ A continuación, crearemos un formulario HTML para que se pueda ver cómo se ve 
 
 Siguiendo la guía, iniciamos nuevamente ncat -l 8081, para escuchar en el puerto 8081
 
-![Alt text](<HTTP y URI/Untitled 9.png>)
+![Alt text](<Imagenes HTTP y URI/Untitled 9.png>)
 
 Ahora guardaremos el siguiente archivo, el cual nombraremos *login.html*
 
@@ -119,11 +120,11 @@ En el archivo anterior se debe reemplazar `Url-servidor-falso`  por  `http://lo
 
 Una vez reemplazado, abrimos nuestro archivo html para poder visualizar su contenido:
 
-![Alt text](<HTTP y URI/Untitled 10.png>)
+![Alt text](<Imagenes HTTP y URI/Untitled 10.png>)
 
 Al cambiar de servidor y autenticarnos, veremos que se ha creado un nuevo post, como respuesta, en el estado del servidor.
 
-![Alt text](<HTTP y URI/Untitled 11.png>)
+![Alt text](<Imagenes HTTP y URI/Untitled 11.png>)
 
 Esto quiere decir que se ha enviado la información del servidor y este esta recibiendo los datos para procesarlos.
 
@@ -147,11 +148,11 @@ Repetimos el experimento varias veces y respondamos las siguientes preguntas:
     
     Sin cambios:
     
-    ![Alt text](<HTTP y URI/Untitled 12.png>)
+    ![Alt text](<Imagenes HTTP y URI/Untitled 12.png>)
     
     Con cambios:
     
-    ![Alt text](<HTTP y URI/Untitled 13.png>)
+    ![Alt text](<Imagenes HTTP y URI/Untitled 13.png>)
     
     Cambiar las propiedades de nombre de los campos en un formulario HTML afecta cómo se identifican y procesan los datos enviados por el formulario en el servidor.
     
@@ -159,7 +160,7 @@ Repetimos el experimento varias veces y respondamos las siguientes preguntas:
     
     Para este caso, se agrego una nueva linea  que incluye `<input type="submit" name="register" value="Register">`, lo cual nos proporciona un botón adicional.
     
-    ![Alt text](<HTTP y URI/Untitled 14.png>)
+    ![Alt text](<Imagenes HTTP y URI/Untitled 14.png>)
     
     Cuando un usuario hace clic en uno de estos botones y envía el formulario, el servidor puede verificar el nombre del botón en la solicitud para saber qué acción se desea realizar. Esto permite al servidor responder de manera adecuada según la elección del usuario.
     
@@ -169,11 +170,11 @@ Repetimos el experimento varias veces y respondamos las siguientes preguntas:
     
     GET:
     
-    ![Alt text](<HTTP y URI/Untitled 15.png>)
+    ![Alt text](<Imagenes HTTP y URI/Untitled 15.png>)
     
     POST:
     
-    ![Alt text](<HTTP y URI/Untitled 16.png>)
+    ![Alt text](<Imagenes HTTP y URI/Untitled 16.png>)
     
     Respondiendo a las preguntas, es posible enviar el formulario utilizando el método **`GET`** en lugar de **`POST`.** Sin embargo, como se puede observar en ambas imágenes, hay una diferencia significativa en cómo se transmiten los datos del formulario. En el caso de la solicitud **`GET`**, los datos del formulario se muestran en la URL, mientras que en la solicitud **`POST`**, los datos se envían en el cuerpo de la solicitud.
     
@@ -190,13 +191,13 @@ Nos piden probar las dos primeras operaciones `GET`. El cuerpo de la respuesta 
 
 Ejecutamos el comando curl con la URL proporcionada para realizar la primera operación GET, a cual verifica si el usuario ha iniciado sesión.
 
-![Alt text](<HTTP y URI/Untitled 17.png>)
+![Alt text](<Imagenes HTTP y URI/Untitled 17.png>)
 
 En la salida de este comando se puede observar los encabezado de solicitud y respuesta.
 
 Luego ejecutamos el siguiente comando para la segunda operación GET, la cual establece una cookie.
 
-![Alt text](<HTTP y URI/Untitled 18.png>)
+![Alt text](<Imagenes HTTP y URI/Untitled 18.png>)
 
 **Pregunta: ¿Cuáles son las diferencias en los encabezados de respuesta que indican que la segunda operación está configurando una cookie?**
 
@@ -206,17 +207,17 @@ La diferencia en los encabezados es que en la segunda operación GET se encuentr
 
 La respuesta de la aplicación continúa mostrando 'Logged in: false' después de haber ejecutado la segunda operación GET para configurar la cookie. A pesar de haber iniciado sesión, esto podría deberse a varias razones posibles, como problemas en la configuración de la cookie, restricciones de dominio y ruta, expiración de la cookie o problemas en el manejo de cookies en el servidor.
 
-![Alt text](<HTTP y URI/Untitled 19.png>)
+![Alt text](<Imagenes HTTP y URI/Untitled 19.png>)
 
 Para solucionar este problema, tenemos que decirle a curl que almacene las cookies relevantes que envía el servidor, para que sepa incluirlas en futuras solicitudes a ese servidor.
 
 Siguiendo con la actividad probamos `curl -i --cookie-jar cookies.txt http://esaas-cookie-demo.herokuapp.com/login` 
 
-![Alt text](<HTTP y URI/Untitled 20.png>)
+![Alt text](<Imagenes HTTP y URI/Untitled 20.png>)
 
 Ahora verificamos que el archivo `cookies.txt` recién creado contenga información sobre la cookie que coincida con el encabezado `Set-Cookie` de el servidor.
 
-![Alt text](<HTTP y URI/Untitled 21.png>)
+![Alt text](<Imagenes HTTP y URI/Untitled 21.png>)
 
 **Pregunta:** Al observar el encabezado `Set-Cookie` o el contenido del archivo `cookies.txt`, parece que podría haber creado fácilmente esta cookie y simplemente obligar al servidor a creer que ha iniciado sesión. En la práctica, ¿cómo evitan los servidores esta inseguridad?
 
