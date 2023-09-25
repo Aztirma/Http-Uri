@@ -3,25 +3,25 @@
 
 # **[Comprendiendo Request y Response](https://github.com/kapumota/Desarrollo-software-2023/blob/main/Semana4/Http-URI.md?classId=a1bdca4c-128c-4417-a816-076ce4107fd5&assignmentId=8d2318ef-8255-4a0a-908f-fb661c64fd86&submissionId=b5efbf24-7c8f-6a5b-d059-57d0f281874f#comprendiendo-request-y-response)**
 
-Primero se procedio a hechar un vistazo al contenido de la pagina web señalada en la actividad, la cual trabajaremos en funcion de ella para distintas “operaciones”?
+Primero se procedio a hechar un vistazo al contenido de la pagina web señalada en la actividad, la cual trabajaremos en funcion de ella
 
-![Untitled](HTTP%20y%20URI%2099a899bef0ef4873bd1d43e4ab6b6fb9/Untitled.png)
+![Alt text](<Imagenes HTTP y URI/Untitled.png>)
 
 El objetivo de esta actividad es el uso de de las herramientas de lineas de comandos curl y nc.
 
 Es por eso que empezaremos haciendo uso del comando curl en nuestro terminal.
 
-![Untitled](HTTP%20y%20URI%2099a899bef0ef4873bd1d43e4ab6b6fb9/Untitled%201.png)
+![Alt text](<Imagenes HTTP y URI/Untitled 1.png>)
 
 Como se puede observar el uso de este comando mismo nos permito obtener datos del servidor web, esta información es la respuesta HTML que recibe del servidor web.
 
 Siguiendo con la actividad, el siguiente paso será guardar el contenido obtenido en un archivo llamado *pagina_random_words.html* como se observa a continuación:
-
-![Untitled](HTTP%20y%20URI%2099a899bef0ef4873bd1d43e4ab6b6fb9/Untitled%202.png)
+ 
+![Alt text](<Imagenes HTTP y URI/Untitled 2.png>)
 
 Una vez guardado nuestro archivo en nuestro ordenador, abriremos el archivo para obtener una vista previa ???????
 
-![Untitled](HTTP%20y%20URI%2099a899bef0ef4873bd1d43e4ab6b6fb9/Untitled%203.png)
+![Alt text](<Imagenes HTTP y URI/Untitled 3.png>)
 
 **Pregunta: ¿Cuáles son las dos diferencias principales que has visto anteriormente y lo que ves en un navegador web 'normal'? ¿Qué explica estas diferencias?**
 
@@ -31,15 +31,14 @@ Además que al solo guardar una respuesta del servidor tan solo muestra una pala
 
 Siguiendo con la actividad, ahora se procedera a hacernos pasar por un servidor Web escuchando el puerto 8081: `nc -l 8081`.
 
-![Untitled](HTTP%20y%20URI%2099a899bef0ef4873bd1d43e4ab6b6fb9/Untitled%204.png)
+![Alt text](<Imagenes HTTP y URI/Untitled 4.png>)
 
 **Pregunta: Suponiendo que estás ejecutando curl desde otro shell ¿qué URL tendrás que pasarle a curl para intentar acceder a tu servidor falso y por qué?**
 
-Para acceder a nuestro servidor falso tendremos que usar la siguiente URL: [http://localhost:8081](http://localhost:8081) ya que aljshdjkadghj
-
+Para acceder a nuestro servidor falso tendremos que usar la siguiente URL: [http://localhost:8081](http://localhost:8081)  
 Ahora accederemos a nuestro servidor “falso”, este recibira la solicitud de cliente HTTP.
 
-![Untitled](HTTP%20y%20URI%2099a899bef0ef4873bd1d43e4ab6b6fb9/Untitled%205.png)
+![Alt text](<Imagenes HTTP y URI/Untitled 5.png>)
 
 Podemos observar que al momento de acceder a nuestro servidor falso, en la ventana donde ejecutamos el ncat, 
 
@@ -49,7 +48,7 @@ Por que es redundante , ya que el cliente envía una solicitud en su propia maqu
 
 Prueba `curl --help` para ver la ayuda y verificar que la línea de comando `curl -i 'http://randomword.saasbook.info'` mostrará ambos (BOTH) encabezados de respuesta del servidor y(AND) luego el cuerpo de la respuesta.
 
-![Untitled](HTTP%20y%20URI%2099a899bef0ef4873bd1d43e4ab6b6fb9/Untitled%206.png)
+![Alt text](<Imagenes HTTP y URI/Untitled 6.png>)
 
 **Pregunta: Según los encabezados del servidor, ¿cuál es el código de respuesta HTTP del servidor que indica el estado de la solicitud del cliente y qué versión del protocolo HTTP utilizó el servidor para responder al cliente?**
 
@@ -60,8 +59,7 @@ Según el encabezado el código de respuesta que indica el estado de solicitud d
 
 **Pregunta: Cualquier solicitud web determinada puede devolver una página HTML, una imagen u otros tipos de entidades. ¿Hay algo en los encabezados que crea que le dice al cliente cómo interpretar el resultado?.**
 
-![Untitled](HTTP%20y%20URI%2099a899bef0ef4873bd1d43e4ab6b6fb9/Untitled%207.png)
-
+![Alt text](<Imagenes HTTP y URI/Untitled 7.png>)
 Si hay algo en los encabezados que contiene información que el cliente necesita para interpretar el contenido. Por ejemplo, en el caso de encabezado "Content-Type" especifica el tipo de entidad devuelta, como HTML, imágenes o archivos de texto. Esta información permite al cliente, como un navegador web, procesar y mostrar adecuadamente el contenido. 
 
 # **[¿Qué sucede cuando falla un HTTP request?](https://github.com/kapumota/Desarrollo-software-2023/blob/main/Semana4/Http-URI.md?classId=a1bdca4c-128c-4417-a816-076ce4107fd5&assignmentId=8d2318ef-8255-4a0a-908f-fb661c64fd86&submissionId=b5efbf24-7c8f-6a5b-d059-57d0f281874f#qu%C3%A9-sucede-cuando-falla-un-http-request)**
